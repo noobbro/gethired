@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="News and careers at Acme Studio" />
+  <title>Acme Studio — News & Careers</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Acme Studio home">ACME<span>STUDIO</span></a>
+    <a class="header-link" href="#openings">Open roles <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">CAREERS AT ACME STUDIO</p>
+      <h1>Make work that<br><em>matters.</em></h1>
+      <p class="hero-copy">News from our studio, work we’re proud of, and opportunities to join us.</p>
+      <a class="button button-dark" href="#openings">Explore open roles <span>→</span></a>
+    </section>
+
+    <section class="updates-section" id="updates" aria-labelledby="updates-title">
+      <div class="section-heading"><p class="eyebrow">FROM THE STUDIO</p><h2 id="updates-title">Latest updates</h2></div>
+      <div class="updates"></div>
+    </section>
+
+    <section class="roles-section" id="openings" aria-labelledby="roles-title">
+      <div class="section-heading">
+        <p class="eyebrow">JOIN THE TEAM</p>
+        <h2 id="roles-title">Open positions <span id="role-count"></span></h2>
+      </div>
+      <div id="jobs" class="jobs" aria-live="polite"></div>
+    </section>
+
+    <section class="culture">
+      <p class="eyebrow">HOW WE WORK</p>
+      <div class="culture-grid">
+        <h2>Good work needs<br>room to breathe.</h2>
+        <p>We value clear thinking, generous collaboration, and ownership. We work remotely, stay close to customers, and care about the craft as much as the outcome.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> Acme Studio</span><a href="mailto:hello@example.com">Get in touch</a></footer>
+
+  <dialog id="job-dialog" class="job-dialog">
+    <button class="close" id="close-dialog" aria-label="Close">×</button>
+    <div id="job-detail"></div>
+  </dialog>
+
+  <template id="application-template">
+    <form id="application-form" class="application-form" method="POST">
+      <input type="hidden" name="job" />
+      <input type="hidden" name="_subject" />
+      <input type="hidden" name="_template" value="table" />
+      <div class="form-grid">
+        <label>Full name<input name="name" autocomplete="name" required maxlength="100" /></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required maxlength="254" /></label>
+        <label>Phone <span class="optional">optional</span><input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+        <label>Location <span class="optional">optional</span><input name="location" autocomplete="address-level2" maxlength="100" /></label>
+      </div>
+      <label>Tell us why you’re interested<textarea name="message" rows="4" required maxlength="3000"></textarea></label>
+      <label>Resume or portfolio link <span class="optional">optional</span><input name="resume_link" type="url" placeholder="https://" maxlength="1000" /></label>
+      <p class="field-note">Please use a public link from Google Drive, Dropbox, LinkedIn, or your portfolio. It will arrive in the application email.</p>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <button class="button button-dark" type="submit">Send application <span>→</span></button>
+    </form>
+  </template>
+  <script src="app.js"></script>
+</body>
+</html>
