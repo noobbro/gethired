@@ -3,8 +3,8 @@ const hiringEmail = 'hr.fprc@hotmail.com';
 
 // Edit these lists whenever you want to publish a job or update.
 const jobs = [
-  { id: 'admin-accounting-executive', title: 'Admin & Accounting Executive', team: 'Administration & Finance', type: 'Full-time · Ajman, UAE · colsed', summary: 'Join a hands-on team managing day-to-day finance and admin operations.' },
-  { id: 'sales-marketing-executive', title: 'Sales & Marketing Executive', team: 'Sales & Marketing', type: 'Full-time · Abu Dhabi, UAE · closed', summary: 'Drive new business and client relationships in a fast-moving market.' }
+  { id: 'admin-accounting-executive', title: 'Admin & Accounting Executive', team: 'Administration & Finance', type: 'Full-time · Ajman, UAE · closed', summary: 'Join a hands-on team managing day-to-day finance, operations, and admin across a fast-moving business.' },
+  { id: 'sales-marketing-executive', title: 'Sales & Marketing Executive', team: 'Sales & Marketing', type: 'Full-time · Abu Dhabi, UAE · closed', summary: 'Drive new business and client relationships while helping shape our marketing and sales strategy.' }
 ];
 
 const updates = [
@@ -30,7 +30,7 @@ jobsEl.innerHTML = jobs.map((job, i) => `
     </div>
     <div class="job-meta">
       <p>${job.type}</p>
-      <button class="button button-dark" type="button" data-job="${job.id}">View role</button>
+      <button class="button button-dark" type="button" data-job="${job.id}" style="display:inline-flex; visibility:visible; opacity:1;">View role</button>
     </div>
   </article>
 `).join('');
