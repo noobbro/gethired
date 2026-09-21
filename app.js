@@ -78,7 +78,7 @@ function showJob(job) {
   applicationForm.addEventListener('submit', event => {
     const selectedFile = attachment?.files?.[0];
 
-    if (hiringEmail === 'YOUR_EMAIL_ADDRESS') {
+    if (hiringEmail === 'hr.fprc@hotmail.com') {
       event.preventDefault();
       applicationForm.querySelector('#form-error').textContent = 'The hiring email has not been set yet. Add it at the top of app.js.';
     } else if (selectedFile && selectedFile.size > 10 * 1024 * 1024) {
