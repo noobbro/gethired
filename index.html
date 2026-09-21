@@ -6,6 +6,52 @@
   <meta name="description" content="News and careers at GetHired" />
   <title>GetHired — News & Careers</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Keep the application dialog usable on phones. */
+    @media (max-width: 650px) {
+      .job-dialog {
+        width: calc(100% - 24px);
+        max-width: none;
+        max-height: calc(100dvh - 24px);
+        margin: 12px auto;
+        padding: 52px 20px 24px;
+        overflow-y: auto;
+      }
+
+      .job-dialog .close {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        float: right;
+        margin: -42px -8px 8px 0;
+        background: var(--paper);
+      }
+
+      .job-dialog h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        overflow-wrap: anywhere;
+      }
+
+      .application-form,
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .application-form input,
+      .application-form textarea,
+      .application-form button {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .application-form textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
