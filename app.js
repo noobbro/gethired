@@ -1,4 +1,4 @@
-// EDIT THIS EMAIL FIRST. Every application will be sent here.
+// Applications will be sent here.
 const hiringEmail = 'hr.fprc@hotmail.com';
 
 // Edit these lists whenever you want to publish a job or update.
@@ -78,10 +78,7 @@ function showJob(job) {
   applicationForm.addEventListener('submit', event => {
     const selectedFile = attachment?.files?.[0];
 
-    if (hiringEmail === 'hr.fprc@hotmail.com') {
-      event.preventDefault();
-      applicationForm.querySelector('#form-error').textContent = 'The hiring email has not been set yet. Add it at the top of app.js.';
-    } else if (selectedFile && selectedFile.size > 10 * 1024 * 1024) {
+    if (selectedFile && selectedFile.size > 10 * 1024 * 1024) {
       event.preventDefault();
       applicationForm.querySelector('#form-error').textContent = 'Please choose a resume smaller than 10 MB.';
     } else if (!selectedFile && !resumeLink.value.trim()) {
