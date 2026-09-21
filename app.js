@@ -30,8 +30,12 @@ function showJob(job) {
   applicationForm.elements.job.value = job.title;
   applicationForm.elements._subject.value = `New application — ${job.title}`;
   applicationForm.action = `https://formsubmit.co/${encodeURIComponent(hiringEmail)}`;
+  const attachment = applicationForm.elements.attachment;
+  attachment.addEventListener('change', () => { detail.querySelector('#file-name').textContent = attachment.files[0]?.name || 'No file selected'; });
   applicationForm.addEventListener('submit', event => {
     if (hiringEmail === 'YOUR_EMAIL_ADDRESS') { event.preventDefault(); applicationForm.querySelector('#form-error').textContent = 'The hiring email has not been set yet. Add it at the top of app.js.'; }
+    else if (attachment.files[0]?.size > 10 * 1024 * 1024) { event.preventDefault(); applicationForm.querySelector('#form-error').textContent = 'Please choose a resume smaller than 10 MB.'; }
+    else if (!attachment.files[0] && !applicationForm.elements.resume_link.value.trim()) { event.preventDefault(); applicationForm.querySelector('#form-error').textContent = 'Please upload a resume or add a resume link.'; }
   });
   dialog.showModal();
 }
