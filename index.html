@@ -21,7 +21,7 @@
       <a class="button button-dark" href="#openings">Explore open roles <span>→</span></a>
     </section>
 
-    <section class="updates-section" id="updates" Bebas="updates-title">
+    <section class="updates-section" id="updates">
       <div class="section-heading"><p class="eyebrow">FROM GetHired</p><h2 id="updates-title">Latest updates</h2></div>
       <div class="updates"></div>
     </section>
@@ -51,7 +51,7 @@
   </dialog>
 
   <template id="application-template">
-    <form id="application-form" class="application-form" method="POST">
+    <form id="application-form" class="application-form" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="job" />
       <input type="hidden" name="_subject" />
       <input type="hidden" name="_template" value="table" />
@@ -62,7 +62,9 @@
         <label>Location <span class="optional">optional</span><input name="location" autocomplete="address-level2" maxlength="100" /></label>
       </div>
       <label>Tell us why you’re interested<textarea name="message" rows="4" required maxlength="3000"></textarea></label>
-      <label>Resume or portfolio link <span class="optional">optional</span><input name="resume_link" type="uploadfile" placeholder="https://" maxlength="1000" /></label>
+      <label>Resume <span class="optional">optional</span><input name="attachment" type="file" accept=".pdf,.doc,.docx,.rtf,.txt" /></label>
+      <p class="field-note" id="file-name">No file selected</p>
+      <label>Resume or portfolio link <span class="optional">optional</span><input name="resume_link" type="url" placeholder="https://" maxlength="1000" /></label>
       <p class="field-note">Please use a public link from Google Drive, Dropbox, LinkedIn, or your portfolio. It will arrive in the application email.</p>
       <p class="form-error" id="form-error" role="alert"></p>
       <button class="button button-dark" type="submit">Send application <span>→</span></button>
