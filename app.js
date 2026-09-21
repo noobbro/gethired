@@ -10,7 +10,7 @@ const jobs = [
 const updates = [
   { date: 'September 21, 2026', title: 'We are growing our product team', text: 'We have opened two new remote roles for people who care deeply about making useful, human products.' },
   { date: 'September 10, 2026', title: 'A new chapter for our studio', text: 'We are sharpening our focus on digital tools that make everyday work a little easier.' },
-  { date: 'August 26, 2026', title: 'Hello from Acme Studio', text: 'This is where we will share studio notes, new work, and future opportunities.' }
+  { date: 'August 26, 2026', title: 'Hello from GetHired', text: 'This is where we will share GetHired notes, new work, and future opportunities.' }
 ];
 
 const jobsEl = document.querySelector('#jobs');
